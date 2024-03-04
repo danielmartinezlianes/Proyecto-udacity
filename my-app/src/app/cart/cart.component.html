@@ -1,0 +1,13 @@
+<header><a routerLink="/"> Product list</a>|<a routerLink="/cart"> Cart</a></header>
+
+<form class="cart-panel" #form="ngForm" (ngSubmit)="onSubmit()" >
+    <p>Full name</p><input type="text" name="Full name" required minlength="3" appForbiddenName="Full name" [(ngModel)]="fullname" placeholder="(minimum 3 characters)">
+    <p>Address</p><input type="text" name="Address" required minlength="6" [(ngModel)]="address" placeholder="(minimum 6 characters)">
+    <p>Credit card number</p><input  type="text" name="credit card" required minlength="16" [(ngModel)]="creditcard" pattern="[0-9]*" placeholder="(16-digit number)">
+    <br><br>
+    <button type="submit" [disabled]="form.invalid" >Sign in</button>
+</form>
+<div class="cart-item" >
+<div  *ngFor="let producto of product" ><img class="product-image"src={{producto.url}} width="100" height="100" />{{producto.name}}: <input  class="number-input" type="number" name="username" min="0"  [(ngModel)]="producto.counter"  (input)="onInputChange(producto)"> </div>
+<p>Total:{{total}}€</p>
+</div>
