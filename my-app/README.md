@@ -9,3 +9,5 @@ npm install
 ng serve
 
 url: http://localhost:4200/
+
+changes made on product-item and product-list.

@@ -10,3 +10,10 @@
   display: flex;
   justify-content: center;
 }
+header{
+  background-color: #33B5E5;
+  padding:2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

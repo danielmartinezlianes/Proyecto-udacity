@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HttpService } from '../http.service';
 import { CartlistService } from '../cartlist.service';
 import { Producto } from '../model/Producto';
@@ -10,9 +10,10 @@ import { Producto } from '../model/Producto';
 export class ProductItemComponent implements OnInit {
   Products: Producto[] = [];
   cart:Producto[]=[];
-  producto='no';
+  @Input() producto='no';
   counter=1;
   añadir=true;
+  @Output() show=new EventEmitter();
   constructor(private httpService: HttpService,private cartService:CartlistService) { 
   
   }
@@ -28,9 +29,7 @@ export class ProductItemComponent implements OnInit {
   }); 
 }
 
-show(product){
-  this.producto=product;
-}
+
 addtocart(product):void{
   this.cart=this.cartService.getCart();
   this.añadir=true;

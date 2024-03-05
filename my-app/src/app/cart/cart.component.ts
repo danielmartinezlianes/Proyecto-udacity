@@ -27,6 +27,7 @@ export class CartComponent implements OnInit {
     this.total=0;
 
       if(producto.counter==0){
+        alert(producto.name+" removed")
         this.cartService.removeToCart(producto);
         this.product=this.cartService.getCart();
       }

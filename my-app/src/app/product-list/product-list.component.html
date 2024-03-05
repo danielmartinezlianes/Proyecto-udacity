@@ -1,1 +1,2 @@
-<app-product-item ></app-product-item>
+<header><a routerLink="/" (click)="show('no')"> Product list</a>|<a routerLink="/cart"> Cart</a></header>
+<app-product-item [producto]="producto" (show)="show($event)"></app-product-item>

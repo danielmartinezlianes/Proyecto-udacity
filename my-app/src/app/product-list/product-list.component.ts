@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-
+  producto='no';
   constructor() { 
   
   }
@@ -13,5 +13,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
+  show(product:string){
+    this.producto=product;
+  }
 }

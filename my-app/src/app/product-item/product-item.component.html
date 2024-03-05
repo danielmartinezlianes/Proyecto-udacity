@@ -1,8 +1,6 @@
-<header><a routerLink="/" (click)="show('no')"> Product list</a>|<a routerLink="/cart"> Cart</a></header>
 <div  *ngFor="let product of Products"  >
     <div class="product-container" *ngIf="producto==product.name || producto=='no'">
-      <img class="product-image"src={{product.url}} width="100" height="100" (click)="show(product.name)"/>
-      
+      <img class="product-image"src={{product.url}} width="100" height="100" (click)="show.emit(product.name)"/>
       <p>{{product.name}}:</p>
       <p>{{product.price}}€</p>
       <p *ngIf="producto==product.name" >{{product.description}}</p>
@@ -10,7 +8,7 @@
       <br>
       <button (click)="addtocart(product)">add to cart</button>
       <br>
-      <a *ngIf="producto==product.name" (click)="show('no')" routerLink="/">Back to product list</a>
+      <a *ngIf="producto==product.name" (click)="show.emit('no')" routerLink="/">Back to product list</a>
     </div>
     <br>
 </div>

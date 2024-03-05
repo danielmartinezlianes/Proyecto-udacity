@@ -8,6 +8,6 @@
     <button type="submit" [disabled]="form.invalid" >Sign in</button>
 </form>
 <div class="cart-item" >
-<div  *ngFor="let producto of product" ><img class="product-image"src={{producto.url}} width="100" height="100" />{{producto.name}}: <input  class="number-input" type="number" name="username" min="0"  [(ngModel)]="producto.counter"  (input)="onInputChange(producto)"> </div>
+<div  *ngFor="let producto of product" ><img class="product-image"src={{producto.url}} width="100" height="100" />{{producto.name}}: <input  class="number-input" type="number" name="username" min="0"  [(ngModel)]="producto.counter"  (ngModelChange)="onInputChange(producto)"> </div>
 <p>Total:{{total}}€</p>
 </div>
